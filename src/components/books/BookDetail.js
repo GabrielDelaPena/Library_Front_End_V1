@@ -11,7 +11,7 @@ function BookDetail() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:8081/book/${bookId}`)
+    fetch(`https://library-server-node.onrender.com/book/${bookId}`)
       .then((response) => {
         return response.json();
       })
@@ -23,7 +23,7 @@ function BookDetail() {
   }, []);
 
   const deleteHandler = () => {
-    fetch(`http://localhost:8081/book/${bookId}`, {
+    fetch(`https://library-server-node.onrender.com/book/${bookId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

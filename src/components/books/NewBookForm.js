@@ -30,7 +30,7 @@ function NewBookForm() {
       description: enteredDescription,
     };
 
-    fetch("http://localhost:8081/book", {
+    fetch("https://library-server-node.onrender.com/book", {
       method: "POST",
       body: JSON.stringify(newBook),
       headers: {

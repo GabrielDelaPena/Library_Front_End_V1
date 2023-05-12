@@ -45,7 +45,7 @@ function BookEdit() {
       description: enteredDescription,
     };
 
-    fetch(`http://localhost:8081/book/${bookId}`, {
+    fetch(`https://library-server-node.onrender.com/book/${bookId}`, {
       method: "PUT",
       body: JSON.stringify(editedBook),
       headers: {
