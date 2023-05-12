@@ -13,20 +13,17 @@ function BookEdit() {
   const year = useRef();
   const description = useRef();
 
-  const fetchedBookData = () => {
-    fetch(`http://localhost:8081/book/${bookId}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setBook(data.book);
-        console.log("Book data fetched");
-      });
-  };
-
   useEffect(() => {
-    fetchedBookData();
+    fetch(`https://library-server-node.onrender.com/book/${bookId}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      setBook(data.book);
+      console.log("Book data fetched");
+    });
   }, []);
+
 
   const submitHandler = (event) => {
     event.preventDefault();

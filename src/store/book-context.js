@@ -47,7 +47,6 @@ export function BookContextProvider(props) {
   }, []);
 
   console.log("Context rendered");
-  console.log(books);
 
   const context = {
     books: books,
