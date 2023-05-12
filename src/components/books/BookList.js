@@ -9,7 +9,7 @@ function BookList() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/books")
+    fetch("http://localhost:8081/books")
       .then((response) => {
         return response.json();
       })
@@ -20,10 +20,13 @@ function BookList() {
       });
   }, []);
 
+  console.log(books);
+
   return (
     <section className={classes.listContainer}>
+      <p className={classes.title}>This app is designed for Node.js development.</p>
       <ul className={classes.bookList}>
-        {books.map((book, index) => {
+        {books?.map((book, index) => {
           return <BookItem key={index} book={book} />;
         })}
       </ul>

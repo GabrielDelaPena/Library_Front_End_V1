@@ -30,7 +30,7 @@ function NewBookForm() {
       description: enteredDescription,
     };
 
-    fetch("http://localhost:8080/book", {
+    fetch("http://localhost:8081/book", {
       method: "POST",
       body: JSON.stringify(newBook),
       headers: {

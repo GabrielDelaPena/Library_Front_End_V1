@@ -14,7 +14,7 @@ function BookEdit() {
   const description = useRef();
 
   const fetchedBookData = () => {
-    fetch(`http://localhost:8080/book/${bookId}`)
+    fetch(`http://localhost:8081/book/${bookId}`)
       .then((response) => {
         return response.json();
       })
@@ -45,7 +45,7 @@ function BookEdit() {
       description: enteredDescription,
     };
 
-    fetch(`http://localhost:8080/book/${bookId}`, {
+    fetch(`http://localhost:8081/book/${bookId}`, {
       method: "PUT",
       body: JSON.stringify(editedBook),
       headers: {

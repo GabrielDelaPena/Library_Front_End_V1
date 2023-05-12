@@ -6,7 +6,7 @@ export function BookContextProvider(props) {
   const [books, setBooks] = useState([]);
 
   const getBooks = async () => {
-    const result = await fetch("http://localhost:8080/books");
+    const result = await fetch("http://localhost:8081/books");
     const data = await result.json();
     const books = data.books;
     console.log("Books fetched");
@@ -14,7 +14,7 @@ export function BookContextProvider(props) {
   };
 
   const getSingleBook = async (bookId) => {
-    const response = await fetch(`http://localhost:8080/book/${bookId}`);
+    const response = await fetch(`http://localhost:8081/book/${bookId}`);
     const data = await response.json();
     const book = data.book;
     console.log("Fetched single book");
@@ -22,7 +22,7 @@ export function BookContextProvider(props) {
   };
 
   const addBook = async (book) => {
-    await fetch("http://localhost:8080/book", {
+    await fetch("http://localhost:8081/book", {
       method: "POST",
       body: JSON.stringify(book),
       headers: {
@@ -33,7 +33,7 @@ export function BookContextProvider(props) {
   };
 
   const deleteBook = async (bookId) => {
-    await fetch(`http://localhost:8080/book/${bookId}`, {
+    await fetch(`http://localhost:8081/book/${bookId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
