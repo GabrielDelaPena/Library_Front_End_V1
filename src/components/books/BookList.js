@@ -21,23 +21,14 @@ function BookList() {
       });
   }, []);
 
-  const handleRunServer = () => {
-    fetch("https://library-server-node.onrender.com/")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setServerStatus(data)
-      });
-  }
-
   return (
     <section className={classes.listContainer}>
       <div className={classes.titleStyling}>
         <p className={classes.title}>This app is designed for Node.js development.</p>
         <p>Please click on run server to run the backend server.</p>
-        <button onClick={handleRunServer} className={classes.btnStyle}>Run Server</button>
-        <p>{serverStatus ? serverStatus : ""}</p>
+        <button className={classes.btnStyle}>
+          <a style={{ textDecoration: "none", color: "black" }} href="https://library-server-node.onrender.com/" target="_blank" rel="noreferrer">Run Server</a>
+        </button>
       </div>
 
       <ul className={classes.bookList}>
